@@ -4,25 +4,13 @@ import {TouchableOpacity} from 'react-native';
 import {Image, StyleSheet, Text, View} from 'react-native';
 import {Movie} from '../movieInterface';
 
-// interface Movie {
-//   movie: {
-//     id: number;
-//     overview: string;
-//     poster_path: string;
-//     release_date: string;
-//     title: string;
-//     adult: string;
-//     vote_average: number;
-//   };
-// }
-
 export default function MovieCard({movie}: Movie) {
   const navigation = useNavigation();
 
   return (
     <View style={styles.container}>
       <TouchableOpacity
-        onPress={() => navigation.navigate('Detalhes', {movie})}>
+        onPress={() => navigation.navigate('Detalhes', {movie: movie})}>
         <View style={styles.innerContainer}>
           <View>
             <Image
