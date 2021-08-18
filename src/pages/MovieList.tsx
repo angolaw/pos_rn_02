@@ -1,7 +1,7 @@
 import axios from 'axios';
 import React, {useState} from 'react';
 import {useEffect} from 'react';
-import {View, Text} from 'react-native';
+import {View} from 'react-native';
 import {FlatList} from 'react-native-gesture-handler';
 import apiDefinition from '../../api';
 import MovieCard from '../components/MovieCard';
@@ -24,7 +24,6 @@ export default function MovieList() {
       const response = await axios.get(apiRequest);
       const moviesResponse = response.data.results;
       setMovies(moviesResponse);
-      //poster path build https://image.tmdb.org/t/p/original/poster_path
     }
 
     getPopularMovieData();
@@ -45,6 +44,7 @@ export default function MovieList() {
 export function FlatListItemSeparator() {
   return (
     <View
+      // eslint-disable-next-line react-native/no-inline-styles
       style={{
         height: 1,
         width: '100%',

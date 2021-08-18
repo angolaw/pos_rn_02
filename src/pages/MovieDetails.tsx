@@ -6,7 +6,7 @@ import {format} from 'date-fns';
 export default function MovieDetails() {
   //get movie data passed by navigation
   const route = useRoute();
-  const {movie}: Movie = route.params;
+  const {movie}: Movie = route.params as Movie;
 
   return (
     <View style={styles.container}>
